@@ -16,7 +16,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-4 transition-colors duration-300 ${
-        isScrolled ? "bg-transparent shadow-none" : "bg-white shadow-md"
+        isScrolled
+          ? "bg-black/20 shadow-none text-white backdrop-blur-sm"
+          : " text-white"
       }`}
     >
       <div className="text-lg font-semibold">
@@ -28,9 +30,9 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="flex items-center gap-3">
+      <div className="absolute left-1/2 -translate-x-1/2 ">
         {" "}
-        <ul className="flex gap-6 list-none">
+        <ul className="flex gap-6 text-sm font-medium">
           <li>
             <a href="#">Home</a>
           </li>

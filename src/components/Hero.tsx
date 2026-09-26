@@ -24,9 +24,9 @@ function Hero() {
               <button className="rounded-md bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700">
                 View Cars
               </button>
-              <div className="rounded-md border border-white/40 px-7 py-4 font-semibold text-white transition hover:bg-white hover:text-black">
+              <button className="rounded-md border border-white/40 px-7 py-4 font-semibold text-white transition hover:bg-white hover:text-black">
                 Contact Us
-              </div>
+              </button>
             </div>
           </div>
         </div>

@@ -6,7 +6,6 @@ const Footer = () => {
     <footer className="bg-slate-950 text-gray-300">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:px-12">
 
-        {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold text-white">
             KENNY <span className="text-blue-500">AUTO</span>
@@ -17,7 +16,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+
         <div>
           <h3 className="mb-4 text-lg font-semibold text-white">
             Quick Links
@@ -50,7 +49,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <h3 className="mb-4 text-lg font-semibold text-white">
             Contact Us
