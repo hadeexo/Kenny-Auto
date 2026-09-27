@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Model {
+  id: string;
   name: string;
   brand: string;
   price: string;
@@ -9,24 +11,28 @@ interface Model {
 
 const models: Model[] = [
   {
+    id: "highlander-2020",
     name: "Highlander 2020",
     brand: "Toyota",
     price: "",
     image: "./images/hero.png",
   },
   {
+    id: "accord-lx-2021",
     name: "Accord LX 2021",
     brand: "Honda",
     price: "",
     image: "./images/hero.png",
   },
   {
+    id: "lexus-rx-2022",
     name: "Lexus RX 2022",
     brand: "Lexus",
     price: "",
     image: "./images/hero.png",
   },
   {
+    id: "mdx-2023",
     name: "MDX 2023",
     brand: "Acura",
     price: "",
@@ -46,7 +52,7 @@ const ModelCard = ({ model }: { model: Model }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(el); 
+          observer.unobserve(el);
         }
       },
       { threshold: 0.3 },
@@ -57,24 +63,29 @@ const ModelCard = ({ model }: { model: Model }) => {
   }, []);
 
   return (
-    <div ref={ref} className="overflow-hidden rounded-xl relative group">
+    <Link to={`/models/${model.id}`}>
       <div
-        className={`transition-all duration-1000 ease-out ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
-        }`}
+        ref={ref}
+        className="overflow-hidden rounded-xl relative group cursor-pointer"
       >
-        <img
-          src={model.image}
-          alt={model.name}
-          className="w-full h-64 object-cover"
-        />
+        <div
+          className={`transition-all duration-1000 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
+          }`}
+        >
+          <img
+            src={model.image}
+            alt={model.name}
+            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div className="p-4 bg-white">
+          <p className="text-sm text-gray-500">{model.brand}</p>
+          <h3 className="text-lg font-semibold">{model.name}</h3>
+          <p className="text-orange-500 font-bold">{model.price}</p>
+        </div>
       </div>
-      <div className="p-4 bg-white">
-        <p className="text-sm text-gray-500">{model.brand}</p>
-        <h3 className="text-lg font-semibold">{model.name}</h3>
-        <p className="text-orange-500 font-bold">{model.price}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
@@ -82,12 +93,10 @@ const OurModels = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Our Featured Models
-        </h2>
+        <h2 className="text-3xl font-bold mb-12">Our Featured Models</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {models.map((model) => (
-            <ModelCard key={model.name} model={model} />
+            <ModelCard key={model.id} model={model} />
           ))}
         </div>
       </div>
@@ -96,3 +105,6 @@ const OurModels = () => {
 };
 
 export default OurModels;
+
+export { models };
+export type { Model };

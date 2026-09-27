@@ -1,6 +1,8 @@
+
 import FeaturedCars from "../components/FeaturedCars";
 import Hero from "../components/Hero";
 import StatItem from "../components/StatItem";
+
 
 const Home = () => {
   return (
@@ -8,6 +10,7 @@ const Home = () => {
       <Hero />
       <StatItem />
       <FeaturedCars />
+     
     </div>
   );
 };
