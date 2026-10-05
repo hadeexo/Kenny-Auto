@@ -25,9 +25,17 @@ const WhyKenny = () => {
       className="relative bg-cover bg-center text-white py-24 px-6 md:px-16 overflow-hidden"
       style={{ backgroundImage: "url('./images/hero.png')" }}
     >
+      {/* base darkening so text stays legible over the photo */}
       <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-x-0 top-0 h-40 md:h-56 bg-gradient-to-b from-white to-transparent" />
-      <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+
+      {/* fade IN from the white section above */}
+      <div className="absolute inset-x-0 top-0 h-40 md:h-56 bg-linear-to-b from-white to-transparent" />
+
+      {/* left-side vignette so text has a consistent dark backdrop */}
+      <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
+
+      {/* fade OUT into the white section below — color must match that section's bg */}
+      <div className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-linear-to-t from-gray-900 to-transparent" />
 
       <div className="relative max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-3">Why Kenny Auto</h2>
@@ -36,8 +44,8 @@ const WhyKenny = () => {
         </p>
 
         <p className="text-sm md:text-base text-gray-200 max-w-lg mb-10">
-          Every car inspected, every warranty real, every customer looked after
-          — before the sale and long after.
+          Every car inspected, every warranty real, every customer looked
+          after, before the sale and long after.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl items-stretch">
@@ -48,7 +56,7 @@ const WhyKenny = () => {
                 key={i}
                 className={`rounded-lg p-5 flex flex-col justify-center transition-transform ${
                   isHighlighted
-                    ? "bg-blue-50 text-gray-900 sm:scale-105 shadow-xl shadow-orange-900/30 border-black/40"
+                    ? "bg-blue-50 text-gray-900 sm:scale-105 shadow-xl shadow-black/30 border border-black/10"
                     : "bg-black/60 backdrop-blur-sm border border-white/20"
                 }`}
               >
