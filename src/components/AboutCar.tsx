@@ -24,11 +24,23 @@ interface Spec {
 
 const specs: Spec[] = [
   { icon: <Gauge size={20} />, label: "Mileage", value: "170,744 mi" },
-  { icon: <Circle size={20} className="fill-black" />, label: "Exterior Color", value: "Black" },
+  {
+    icon: <Circle size={20} className="fill-black" />,
+    label: "Exterior Color",
+    value: "Black",
+  },
   { icon: <Car size={20} />, label: "Structure", value: "4 Doors" },
   { icon: <FileText size={20} />, label: "Stock Number", value: "536276" },
-  { icon: <Cog size={20} />, label: "Engine", value: "V8, Flex Fuel, 5.7 Liter" },
-  { icon: <Settings2 size={20} />, label: "Transmission", value: "Auto, 6-Spd Sequential" },
+  {
+    icon: <Cog size={20} />,
+    label: "Engine",
+    value: "V8, Flex Fuel, 5.7 Liter",
+  },
+  {
+    icon: <Settings2 size={20} />,
+    label: "Transmission",
+    value: "Auto, 6-Spd Sequential",
+  },
 ];
 
 const AboutCar = () => {
@@ -65,7 +77,7 @@ const AboutCar = () => {
         <div className="flex flex-wrap gap-3 mb-6">
           <span className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-md text-sm">
             <MapPin size={16} />
-            Lagos Showroom
+            Abuja
           </span>
           <span className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-md text-sm">
             <Phone size={16} />
@@ -87,10 +99,16 @@ const AboutCar = () => {
               key={i}
               onClick={() => setActiveImage(i)}
               className={`w-24 h-16 rounded-md overflow-hidden border-2 ${
-                activeImage === i ? "border-orange-500" : "border-transparent opacity-70"
+                activeImage === i
+                  ? "border-orange-500"
+                  : "border-transparent opacity-70"
               }`}
             >
-              <img src={img} alt={`thumb-${i}`} className="w-full h-full object-cover" />
+              <img
+                src={img}
+                alt={`thumb-${i}`}
+                className="w-full h-full object-cover"
+              />
             </button>
           ))}
           <button className="ml-2 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100">
@@ -100,16 +118,28 @@ const AboutCar = () => {
 
         <div className="flex items-center gap-4 mb-8">
           <span className="text-sm text-gray-500">Share To</span>
-          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-green-500 text-white">
+          <a
+            href="#"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-green-500 text-white"
+          >
             <Phone size={16} />
           </a>
-          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-orange-500 text-white">
+          <a
+            href="#"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-orange-500 text-white"
+          >
             <Mail size={16} />
           </a>
-          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-sky-500 text-white">
+          <a
+            href="#"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-sky-500 text-white"
+          >
             <Share2 size={16} />
           </a>
-          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-blue-700 text-white">
+          <a
+            href="#"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-blue-700 text-white"
+          >
             <Share2 size={16} />
           </a>
         </div>
@@ -131,25 +161,36 @@ const AboutCar = () => {
 
       <div className="lg:col-span-1">
         <div className="sticky top-6 bg-white shadow-lg rounded-xl p-6 border">
-          <h2 className="text-xl font-semibold text-center mb-6">Contact us directly</h2>
+          <h2 className="text-xl font-semibold text-center mb-6">
+            Contact us directly
+          </h2>
 
           <div className="flex justify-center gap-12 mb-6">
             <a href="#" className="flex flex-col items-center gap-2">
-              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white">
-                <Phone size={20} />
-              </span>
+              <li className="flex items-center gap-3">
+                <a
+                  href="https://wa.me/2348038659145"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white">
+                    <Phone size={20} />
+                  </span>
+                </a>
+              </li>
+
               <span className="text-sm font-medium">Whatsapp</span>
             </a>
-            <a href="tel:07002000600" className="flex flex-col items-center gap-2">
+            <a
+              href="tel:08038659145"
+              className="flex flex-col items-center gap-2"
+            >
               <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-900 text-white">
                 <Phone size={20} />
               </span>
-              <span className="text-sm font-medium">070 0200 0600</span>
+              <span className="text-sm font-medium">Call</span>
             </a>
           </div>
-          <p className="text-xs text-center text-gray-500 mb-6">
-            Mon-Fri 9am-6pm / Sat 10am-4pm
-          </p>
 
           <div className="flex items-center gap-4 mb-6">
             <div className="flex-1 h-px bg-gray-200" />
@@ -178,7 +219,9 @@ const AboutCar = () => {
             </div>
 
             <div className="flex gap-3">
-              <span className="border rounded-md px-3 py-2 text-sm text-gray-500">+234</span>
+              <span className="border rounded-md px-3 py-2 text-sm text-gray-500">
+                +234
+              </span>
               <input
                 type="tel"
                 placeholder="Phone Number"
