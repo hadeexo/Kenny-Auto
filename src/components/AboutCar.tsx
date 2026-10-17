@@ -9,7 +9,6 @@ import {
   Gauge,
   Circle,
   Car,
-  FileText,
   Cog,
   Settings2,
   ArrowUp,
@@ -88,7 +87,7 @@ const AboutCar = () => {
           <img
             src={images[activeImage]}
             alt="Vehicle"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-75 object-cover"
           />
         </div>
 
