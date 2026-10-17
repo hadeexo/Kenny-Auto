@@ -14,8 +14,7 @@ import {
   Settings2,
   ArrowUp,
 } from "lucide-react";
-import { models } from "./FeaturedCars"; // adjust path to wherever OurModels.tsx lives
-
+import { models } from "./FeaturedCars";
 interface Spec {
   icon: React.ReactNode;
   label: string;
@@ -30,7 +29,7 @@ const specs: Spec[] = [
     value: "Black",
   },
   { icon: <Car size={20} />, label: "Structure", value: "4 Doors" },
-  { icon: <FileText size={20} />, label: "Stock Number", value: "536276" },
+
   {
     icon: <Cog size={20} />,
     label: "Engine",

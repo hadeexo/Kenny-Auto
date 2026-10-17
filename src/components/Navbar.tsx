@@ -34,13 +34,13 @@ const Navbar = () => {
         {" "}
         <ul className="flex gap-6 text-sm font-medium">
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="/cars">Cars</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
       </div>

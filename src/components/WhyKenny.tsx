@@ -25,16 +25,12 @@ const WhyKenny = () => {
       className="relative bg-cover bg-center text-white py-24 px-6 md:px-16 overflow-hidden"
       style={{ backgroundImage: "url('./images/hero.png')" }}
     >
-      {/* base darkening so text stays legible over the photo */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* fade IN from the white section above */}
       <div className="absolute inset-x-0 top-0 h-40 md:h-56 bg-linear-to-b from-white to-transparent" />
 
-      {/* left-side vignette so text has a consistent dark backdrop */}
       <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
 
-      {/* fade OUT into the white section below — color must match that section's bg */}
       <div className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-linear-to-t from-gray-900 to-transparent" />
 
       <div className="relative max-w-6xl mx-auto">
@@ -44,8 +40,8 @@ const WhyKenny = () => {
         </p>
 
         <p className="text-sm md:text-base text-gray-200 max-w-lg mb-10">
-          Every car inspected, every warranty real, every customer looked
-          after, before the sale and long after.
+          Every car inspected, every warranty real, every customer looked after,
+          before the sale and long after.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl items-stretch">
